@@ -85,14 +85,27 @@ To answer this question, interesting results using the recently released Forbes 
 ## Loading in data
 The data for the second question consists of multiple csv files. Each file contains information on a specific country. It indicates the name and age of the billionaires residing in that country, their net worth, their rank on the Forbes Billionaires list and the industry in which the billionaire operates. 
 
-Since multiple csv files needed to be loaded, a function is created to read in all the files. 
-The data was loaded as follows: 
-```{r}
+Since multiple csv files needs to be loaded, a function is created to collate and combine all the files. This, however, was unsuccessful as an error message was provided:
+> Error: Can't combine `Age` <double> and `Age` <character>.
 
+I then searched for a solution to this problem and found this answer: https://www.tidyverse.org/blog/2020/04/dplyr-1-0-0-and-vctrs/
+
+I therefore added the mutute to change Age to a character variable. However, another error popped up:
+>Error in mutate(Age = as.character(Age)) : object 'Age' not found
+
+I realised that this has to do with the fact that the dataset contain 'Age' is not loaded into the function. I therefore tried to insert the data in the function so that it can pick the Age variable up. However, this still did not work as I received the following error message:
+>Error in UseMethod("mutate") : 
+  no applicable method for 'mutate' applied to an object of class "character"
+  
+I tried to play around with where I placed the mutate and also tried to search for a solution I could not find one. 
+
+The data was loaded as follows (this is commented out to prevent the Readme from not knitting): 
+```{r}
+#source("Question2/code/Data_Collating.R")
+#Forbesdata <- Data_Collating(Datroot = "Question2/data/")
 ```
 
 
-The files contain
 
 # Question 3
 For this question, the answers have been presented in a Texevier pdf.
