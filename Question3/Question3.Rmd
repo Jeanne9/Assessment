@@ -101,10 +101,12 @@ abstract: |
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, fig.width = 6, fig.height = 5, fig.pos="H", fig.pos = 'H')
 # Loading in the data..
-BBCData <- read_rds("Question3/data/tweets_bbc.rds")
-CNNData <- read_rds("Question3/data/tweets_cnn.rds")
-EconData <- read_rds("Question3/data/tweets_eco.rds")
-CountryData <- read_csv("Question3/data/Country_list.csv")
+library(tidyverse)
+
+BBCData <- read_rds("data/tweets_bbc.rds")
+CNNData <- read_rds("data/tweets_cnn.rds")
+EconData <- read_rds("data/tweets_eco.rds")
+CountryData <- read_csv("data/Country_list.csv")
 
 ```
 
@@ -115,9 +117,7 @@ CountryData <- read_csv("Question3/data/Country_list.csv")
 
 # Introduction \label{Introduction}
 
-Due to time constraints I could not answer this question. I only had time to load the data. I am able to work in Texevier. I can refer to sections, such as section \ref{Conclusion} and I can also do referencing, for example I can reference @fama1997. 
-
-
+Due to time constraints I could not answer this question. I only had time to load the data. I am able to work comfortably in Texevier. I can refer to sections, such as section \ref{Conclusion} and I can also do referencing, for example I can reference @alagidede2013. 
 
 
 
