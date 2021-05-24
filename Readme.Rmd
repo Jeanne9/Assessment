@@ -56,7 +56,7 @@ The second statement my friend made is: "Disney films may not have the highest g
 
 To test this statement, a graph containing the profitability of all the leading studios were drawn to compare the profitability across studios. A bar plot was used.
 
-This graph indicates that Independent was the most profitable studio between 2007 and 2011, as it had the highest profitability (just under 120%). Disney's profitability was around 
+This graph indicates that Independent was the most profitable studio between 2007 and 2011, as it had the highest profitability (just under 120%). Disney's profitability was around 40% which is much lower than that of Independent. Therefore, my friend's second statement is incorrect. 
 
 ```{r warning=FALSE}
 source("Question1/code/Profitability_plot.R")
@@ -65,6 +65,8 @@ graph_2
 ```
 
 
+## The third statement
+The second statement my friend made is: "Audiences are always drawn to the highest grossing films. In fact, I bet the correlation between the world wide grossing numbers and audience scores would be near 80%."
 
 
 

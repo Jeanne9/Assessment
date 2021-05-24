@@ -2,11 +2,11 @@
 
 Profitability_plot <- function(MovieData, xaxis_size = 5, xaxis_rows = 3) {
 
-  MoviePlotData <- 
-    MovieData %>% 
+  MoviePlotData <-
+    MovieData %>%
     filter(!is.na(Lead.Studio))
-    
-    
+
+
     g <-
       MoviePlotData %>%
       ggplot() +
@@ -15,8 +15,8 @@ Profitability_plot <- function(MovieData, xaxis_size = 5, xaxis_rows = 3) {
       labs(title = "Studios' profitability", caption = "Data source: Mr. Video", x = "Leading Studios", y = "Profitability") +
       theme(legend.position = "top", legend.title = element_blank()) +
       theme(plot.title = element_text(size = 14),
-            plot.subtitle = element_text(size = 11),
-            axis.text.x = element_text(size = 5)) 
-      
+            plot.subtitle = element_text(size = 8),
+            axis.text.x = element_text(size = 5))
+
 
 }

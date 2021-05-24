@@ -26,7 +26,7 @@ The first statement my friend made is: "I firmly remember that Rotten Tomatoes w
 
 To address this point, Figure \ref{Figure1} was drawn that indicates the ratings audiences gave movies that had a rating of more than 80% on Rotten Tomatoes. 
 The movies are grouped into their relative genres to make it easier to see what the rating of audiences were. Figure \ref{Figure1} indicates that animation movies that had a rating of more than 80% on Rotten Tomatoes, had audience scores above 85%. Therefore, for animation movies, my friend's first statement is true. However, for all the other genres my friend's statement is not true since the audience scores were below 85%. Therefore, my friend's statement regarding movies having high audience scores if they have a high Rotten Tomatoes score is incorrect. 
-```{r, fig.align = 'center', fig.cap = "Audience scores(%)\\label{Figure1}", fig.ext = 'png', fig.height = 5, fig.width = 7}}
+```{r, fig.align = 'center', fig.cap = "Audience scores(%)\\label{Figure1}", fig.ext = 'png', fig.height = 5, fig.width = 7}
 source("code/RottenT_plot.R")
 graph_1 <- RottenT_plot(MovieData, xaxis_size = 5, xaxis_rows = 3)
 graph_1
@@ -34,6 +34,16 @@ graph_1
 
 
 # The second statement
+The second statement my friend made is: "Disney films may not have the highest grossing numbers, but they’ve always been the most profitable of all the leading studios."
 
+To test this statement, Figure \ref{Figure2} is presented below. This graph compares the profitability of all the leading studios. Figure \ref{Figure2} indicates that Independent was the most profitable studio between 2007 and 2011, as it had the highest profitability (just under 120%). Disney's profitability was around 40% which is much lower than that of Independent. Therefore, my friend's second statement regarding Disney being the most profitable studio of all the leading studios is incorrect. 
+```{r, fig.align = 'center', fig.cap = "Studio's Profitability(%)\\label{Figure2}", fig.ext = 'png', fig.height = 5, fig.width = 7}
+source("code/Profitability_plot.R")
+graph_2 <- Profitability_plot(MovieData, xaxis_size = 10, xaxis_rows = 10)
+graph_2
+```
+
+
+# The third statement
 
 
