@@ -110,5 +110,14 @@ The data was loaded as follows (this is commented out to prevent the Readme from
 # Question 3
 For this question, the answers have been presented in a Texevier pdf.
 
+## Loading the data
+The data consists of three rds files and one csv file. It is loaded below:
+```{r}
+BBCData <- read_rds("Question3/data/tweets_bbc.rds")
+CNNData <- read_rds("Question3/data/tweets_cnn.rds")
+EconData <- read_rds("Question3/data/tweets_eco.rds")
+CountryData <- read_csv("Question3/data/Country_list.csv")
+```
+
 
 
