@@ -1,0 +1,46 @@
+---
+title: "Readme"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Purpose
+The purpose of this readme is to explain the code and structure in completing the assessment for the first part of the data science course. This readme outlines the data, packages and codes used and guides the reader as to how each question of the assessment was answered. Each question is answered in a separate project. 
+
+To get started, the different projects was created for question 1, question 2 and question 3. The following code was used:
+```{r eval=FALSE, include=FALSE}
+library(Texevier)
+Texevier::create_template(directory = "C:/Users/E7450/Documents/Maties_WERK/Meesters/Data science/Nico/Assessment", template_name = "Question1")
+Texevier::create_template(directory = "C:/Users/E7450/Documents/Maties_WERK/Meesters/Data science/Nico/Assessment", template_name = "Question2")
+Texevier::create_template(directory = "C:/Users/E7450/Documents/Maties_WERK/Meesters/Data science/Nico/Assessment", template_name = "Question3")
+```
+
+
+# Question 1
+  
+
+The following packages were used:
+```{r}
+pacman::p_load(tidyverse)
+```
+
+
+## Loading in data
+The data for each question has been unzipped and put under the data folder of each question folder. The data for the first question consists of various excel files. A function was written to collate this data into a single data frame. The function is called Data_Collating and is under the code folder of the question 1 folder.
+
+## Question 1(a)
+
+
+
+# Question 2
+
+
+
+# Question 3
+For this question, the answers have been presented in a Texevier pdf.
+
+
+
