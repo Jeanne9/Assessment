@@ -80,8 +80,19 @@ The correlation between world wide grossing numbers and audience scores is `r Co
 
 
 # Question 2
+To answer this question, interesting results using the recently released Forbes Billionaires list is presented.
+
+## Loading in data
+The data for the second question consists of multiple csv files. Each file contains information on a specific country. It indicates the name and age of the billionaires residing in that country, their net worth, their rank on the Forbes Billionaires list and the industry in which the billionaire operates. 
+
+Since multiple csv files needed to be loaded, a function is created to read in all the files. 
+The data was loaded as follows: 
+```{r}
+
+```
 
 
+The files contain
 
 # Question 3
 For this question, the answers have been presented in a Texevier pdf.
