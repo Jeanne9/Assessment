@@ -117,13 +117,11 @@ CountryData <- read_csv("data/Country_list.csv")
 
 # Introduction \label{Introduction}
 
-Due to time constraints I could not answer this question. I only had time to load the data. I am able to work comfortably in Texevier. I can refer to sections, such as section \ref{Conclusion} and I can also do referencing, for example I can reference @alagidede2013. 
-
-
+Due to time constraints I could not answer this question. I only had time to load the data. I am able to work comfortably in Texevier. I can refer to sections, such as section \ref{Conclusion} and I can also do referencing, for example I can reference @alagidede2013. Although this does not prove that I can work in Texevier, I have rewritten one of my essays in Texevier and can send this as an example of work I have done in Texevier.
 
 
 # Conclusion \label{Conclusion}
-
+Write conclusion here. 
 
 
 \newpage

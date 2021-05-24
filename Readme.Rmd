@@ -86,14 +86,17 @@ To answer this question, interesting results using the recently released Forbes 
 The data for the second question consists of multiple csv files. Each file contains information on a specific country. It indicates the name and age of the billionaires residing in that country, their net worth, their rank on the Forbes Billionaires list and the industry in which the billionaire operates. 
 
 Since multiple csv files needs to be loaded, a function is created to collate and combine all the files. This, however, was unsuccessful as an error message was provided:
+
 > Error: Can't combine `Age` <double> and `Age` <character>.
 
-I then searched for a solution to this problem and found this answer: https://www.tidyverse.org/blog/2020/04/dplyr-1-0-0-and-vctrs/
+I then searched for a solution to this problem and found [this](https://www.tidyverse.org/blog/2020/04/dplyr-1-0-0-and-vctrs/) answer: 
 
-I therefore added the mutute to change Age to a character variable. However, another error popped up:
+I therefore added the mutate to change Age to a character variable. However, another error popped up:
+
 >Error in mutate(Age = as.character(Age)) : object 'Age' not found
 
-I realised that this has to do with the fact that the dataset contain 'Age' is not loaded into the function. I therefore tried to insert the data in the function so that it can pick the Age variable up. However, this still did not work as I received the following error message:
+I realised that this has to do with the fact that the dataset contain 'Age' is not loaded into the function. I therefore tried to insert the data in the function so that it can pick the Age variable up. I did this by defining "Datroot = "Question2/data/"" as the function's input. However, this still did not work as I received the following error message:
+
 >Error in UseMethod("mutate") : 
   no applicable method for 'mutate' applied to an object of class "character"
   
@@ -104,6 +107,11 @@ The data was loaded as follows (this is commented out to prevent the Readme from
 #source("Question2/code/Data_Collating.R")
 #Forbesdata <- Data_Collating(Datroot = "Question2/data/")
 ```
+
+Due to these errors, I decided to still write out my thinking, even though I don't have the code available to create the graphs. 
+The first graph I would have plotted would be one comparing the number of billionaires across each country. It would be interesting to see how many billionaires there are in developing vs developed countries. For this graph I would use a bar plot for each country on the x axis and on the y axis I would indicate the number of billionaires listed in that country. I would therefore group the results by Country. 
+
+The second graph I would have plotted would be to compare the average net worth of billionaires under the age of 30, between 30 and 40, between 40 and 50, and over the age of 50. I would think that older billionaires have a higher net worth than younger billionaires, but in this day and age there are multiple billionaires under 30 so it could be that my thinking is wrong. For this, I would need to convert the net worth variable to  numeric. I would use: "mutate(NetWorth = as.numeric(NetWorth))" to do this. Regarding the graph, I would again use a bar graph with each bar representing the mean net worth of billionaires in the specific age group. On the y axis the net worth will be displayed and on the x axis the different age groups will be displayed. I will therefore have to create new columns using mutate where I group the people accoridng to their age in the different age brackets.
 
 
 
