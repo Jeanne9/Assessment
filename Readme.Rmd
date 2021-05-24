@@ -56,17 +56,17 @@ The second statement my friend made is: "Disney films may not have the highest g
 
 To test this statement, a graph containing the profitability of all the leading studios were drawn to compare the profitability across studios. This was done by creating a function called Profitability_plot that draws a bar plot. NA values for the leading studios are dropped. This function is stored in the code folder of the question 1 folder. This function was then sourced in and the relevant input was provided to produce the graph.
 
-This graph indicates that Independent was the most profitable studio between 2007 and 2011, as it had the highest profitability (just under 120%). Disney's profitability was around 40% which is much lower than that of Independent. Therefore, my friend's second statement is incorrect. 
-
 ```{r warning=FALSE}
 source("Question1/code/Profitability_plot.R")
 graph_2 <- Profitability_plot(MovieData, xaxis_size = 10, xaxis_rows = 10)
 graph_2
 ```
 
+This graph indicates that Independent was the most profitable studio between 2007 and 2011, as it had the highest profitability (just under 120%). Disney's profitability was around 40% which is much lower than that of Independent. Therefore, my friend's second statement is incorrect. 
+
 
 ## The third statement
-The second statement my friend made is: "Audiences are always drawn to the highest grossing films. In fact, I bet the correlation between the world wide grossing numbers and audience scores would be near 80%."
+The third statement my friend made is: "Audiences are always drawn to the highest grossing films. In fact, I bet the correlation between the world wide grossing numbers and audience scores would be near 80%."
 
 To test this statement, the correlation between the world wide grossing numbers and audience scores was calculated. The code for this is shown below. 
 
@@ -74,8 +74,6 @@ To test this statement, the correlation between the world wide grossing numbers 
 Corr <- 
   MovieData %>%  
   summarise(Corr = cor(Worldwide.Gross, Audience..score.., method = "spearman", use = "pairwise.complete.obs"))
-
-#Corr <- MovieData %>% filter(price > 10) %>% group_by(taster_name) %>% summarise(Corr = cor(price, points, method = "spearman", use = "pairwise.complete.obs"))
 ```
 
 The correlation between world wide grossing numbers and audience scores is `r Corr %>% slice(1) %>% pull(Corr) %>% round(.,3)*100`%, which is far from 80%. My friend's third statement is therefore incorrect.  

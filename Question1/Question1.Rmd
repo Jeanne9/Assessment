@@ -3,8 +3,8 @@ title: "Profitable movies"
 output: pdf_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r, echo = FALSE, message = FALSE, warning = FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, fig.width = 6, fig.height = 5)
 ```
 
 # Purpose
@@ -17,27 +17,29 @@ pacman::p_load(tidyverse)
 
 The data is loaded as follows:
 ```{r}
-MovieData <- read.csv("Question1/data/Movies.csv")
+MovieData <- read.csv("data/Movies.csv")
 ```
 
 
 # The first statement
 The first statement my friend made is: "I firmly remember that Rotten Tomatoes was always a great review platform - and if a movie had a rating of more than 80% on Rotten Tomatoes, audiences would rate it above 85% every time."
 
-To address this point, Figure \ref{Figure1} was drawn that indicates the ratings audiences gave movies that had a rating of more than 80% on Rotten Tomatoes. 
-The movies are grouped into their relative genres to make it easier to see what the rating of audiences were. Figure \ref{Figure1} indicates that animation movies that had a rating of more than 80% on Rotten Tomatoes, had audience scores above 85%. Therefore, for animation movies, my friend's first statement is true. However, for all the other genres my friend's statement is not true since the audience scores were below 85%. Therefore, my friend's statement regarding movies having high audience scores if they have a high Rotten Tomatoes score is incorrect. 
-```{r, fig.align = 'center', fig.cap = "Audience scores(%)\\label{Figure1}", fig.ext = 'png', fig.height = 5, fig.width = 7}
+To address this point, Figure \ref{Figure1}, as indicated on the next page, was drawn. Figure \ref{Figure1} presents the ratings audiences gave movies that had a rating of more than 80% on Rotten Tomatoes. The movies are grouped into their relative genres to make it easier to see what the rating of audiences were.
+```{r,  warning =  FALSE, fig.align = 'center', fig.cap = "Audience Scores\\label{Figure1}", fig.ext = 'png', fig.height = 5, fig.width = 7}
 source("code/RottenT_plot.R")
 graph_1 <- RottenT_plot(MovieData, xaxis_size = 5, xaxis_rows = 3)
 graph_1
 ```
 
+ Figure \ref{Figure1} indicates that animation movies that had a rating of more than 80% on Rotten Tomatoes, had audience scores above 85%. Therefore, for animation movies, my friend's first statement is true. However, for all the other genres my friend's statement is not true since the audience scores were below 85%. Therefore, my friend's statement regarding movies having high audience scores if they have a high Rotten Tomatoes score is incorrect.
+
+\newpage
 
 # The second statement
 The second statement my friend made is: "Disney films may not have the highest grossing numbers, but they’ve always been the most profitable of all the leading studios."
 
 To test this statement, Figure \ref{Figure2} is presented below. This graph compares the profitability of all the leading studios. Figure \ref{Figure2} indicates that Independent was the most profitable studio between 2007 and 2011, as it had the highest profitability (just under 120%). Disney's profitability was around 40% which is much lower than that of Independent. Therefore, my friend's second statement regarding Disney being the most profitable studio of all the leading studios is incorrect. 
-```{r, fig.align = 'center', fig.cap = "Studio's Profitability(%)\\label{Figure2}", fig.ext = 'png', fig.height = 5, fig.width = 7}
+```{r,  warning =  FALSE, fig.align = 'center', fig.cap = "Studio's Profitabiliy\\label{Figure2}", fig.ext = 'png', fig.height = 5, fig.width = 7}
 source("code/Profitability_plot.R")
 graph_2 <- Profitability_plot(MovieData, xaxis_size = 10, xaxis_rows = 10)
 graph_2
@@ -45,5 +47,16 @@ graph_2
 
 
 # The third statement
+The third statement my friend made is: "Audiences are always drawn to the highest grossing films. In fact, I bet the correlation between the world wide grossing numbers and audience scores would be near 80%."
+
+```{r}
+Corr <- 
+  MovieData %>%  
+  summarise(Corr = cor(Worldwide.Gross, Audience..score.., method = "spearman", use = "pairwise.complete.obs"))
+```
+
+To test this statement, the correlation between the world wide grossing numbers and audience scores was calculated. The correlation between world wide grossing numbers and audience scores is `r Corr %>% slice(1) %>% pull(Corr) %>% round(.,3)*100`%, which is far from 80%. My friend's third statement is therefore incorrect.  
 
 
+# Conclusion
+This document proved that my friend's argument regarding movie critics that perfectly predict films’ popularity and profitability amongst audiences is incorrect. This was done by showing how three of my friend's statements relating to this point is incorrect. Figures were mostly used to prove this. 
